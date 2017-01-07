@@ -1,6 +1,6 @@
 {
   "name": "kurse",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Marks the entity with special trace identification.",
   "support": "kurse.support.js",
   "deploy": "kurse.deploy.js",
@@ -31,7 +31,8 @@
     "een": "^0.1.0",
     "harden": "^0.13.0",
     "kein": "^0.2.0",
-    "protype": "^0.8.0"
+    "protype": "^0.8.0",
+    "truly": "^0.5.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

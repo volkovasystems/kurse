@@ -51,7 +51,8 @@
 			"een": "een",
 			"kein": "kein",
 			"harden": "harden",
-			"protype": "protype"
+			"protype": "protype",
+			"truly": "truly"
 		}
 	@end-include
 */
@@ -61,6 +62,7 @@ const een = require( "een" );
 const kein = require( "kein" );
 const harden = require( "harden" );
 const protype = require( "protype" );
+const truly = require( "truly" );
 
 const kurse = function kurse( entity ){
 	/*;
@@ -85,6 +87,14 @@ const kurse = function kurse( entity ){
 	do{ var trace = cuid( ); }while( een( kurse.cache, trace ) );
 
 	kurse.cache.push( trace );
+
+	if( ( kein( entity, "name" ) && truly( entity.name ) ) ||
+		( truly( entity.constructor ) && truly( entity.constructor.name ) ) )
+	{
+		let name = entity.name || entity.constructor.name;
+
+		trace = `${ name }-${ trace }`;
+	}
 
 	harden( kurse.ID, Symbol( trace ), entity );
 
