@@ -1,6 +1,6 @@
 {
   "name": "kurse",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Marks the entity with special trace identification.",
   "support": "kurse.support.js",
   "deploy": "kurse.deploy.js",
