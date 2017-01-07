@@ -1,0 +1,33 @@
+{
+  "name": "kurse",
+  "version": "0.0.0",
+  "description": "Marks the entity with special trace identification.",
+  "main": "kurse.js",
+  "support": "kurse.support.js",
+  "deploy": "kurse.deploy.js",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "mark",
+    "entity",
+    "trace",
+    "identity",
+    "kurse"
+  ],
+  "homepage": "https://github.com/volkovasystems/kurse",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "een": "^0.1.0",
+    "kein": "^0.2.0",
+    "harden": "^0.13.0",
+    "protype": "^0.8.0"
+  }
+}

@@ -1,2 +1,2 @@
 # kurse
-Marks the object with special trace identification.
+Marks the entity with special trace identification.
