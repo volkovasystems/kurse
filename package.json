@@ -1,6 +1,6 @@
 {
   "name": "kurse",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Marks the entity with special trace identification.",
   "main": "kurse.js",
   "support": "kurse.support.js",
@@ -21,26 +21,29 @@
     "kurse"
   ],
   "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "contributors": [
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/volkovasystems/kurse/issues"
   },
   "homepage": "https://github.com/volkovasystems/kurse#readme",
   "dependencies": {
-    "babel-runtime": "^6.20.0",
+    "babel-runtime": "^6.22.0",
     "cuid": "^1.3.8",
-    "een": "^0.1.0",
-    "harden": "^0.13.0",
-    "kein": "^0.2.0",
-    "protype": "^0.8.0",
-    "truly": "^0.5.0"
+    "een": "^0.3.0",
+    "harden": "^0.14.0",
+    "kein": "^0.8.0",
+    "protype": "^0.11.0",
+    "truly": "^0.9.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.18.0",
-    "babel-core": "^6.21.0",
-    "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-latest": "^6.16.0",
-    "source-map-loader": "^0.1.5",
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-latest": "^6.22.0",
+    "source-map-loader": "^0.1.6",
     "webpack": "^1.14.0"
   }
 }

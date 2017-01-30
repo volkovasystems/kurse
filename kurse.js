@@ -34,6 +34,9 @@
 			"file": "kurse.js",
 			"module": "kurse",
 			"author": "Richeve S. Bebedor",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+			],
 			"eMail": "richeve.bebedor@gmail.com",
 			"repository": "https://github.com/volkovasystems/kurse.git",
 			"test": "kurse-test.js",
