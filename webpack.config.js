@@ -8,6 +8,7 @@ module.exports = {
 	"resolve": {
 		"descriptionFiles": [
 			"bower.json",
+			".bower.json",
 			"package.json"
 		],
 		"modules": [
