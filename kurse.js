@@ -83,7 +83,7 @@ const kurse = function kurse( entity ){
 		throw new Error( "invalid entity" );
 	}
 
-	if( kein( entity, kurse.ID ) ){
+	if( kein( kurse.ID, entity ) ){
 		return entity;
 	}
 
@@ -91,7 +91,7 @@ const kurse = function kurse( entity ){
 
 	kurse.cache.push( trace );
 
-	if( ( kein( entity, "name" ) && truly( entity.name ) ) ||
+	if( ( kein( "name", entity ) && truly( entity.name ) ) ||
 		( truly( entity.constructor ) && truly( entity.constructor.name ) ) )
 	{
 		let name = entity.name || entity.constructor.name;
