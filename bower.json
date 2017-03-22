@@ -1,6 +1,6 @@
 {
   "name": "kurse",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Marks the entity with special trace identification.",
   "main": "kurse.deploy.js",
   "support": "kurse.support.js",
@@ -26,10 +26,10 @@
   ],
   "dependencies": {
     "cuid": "^1.3.8",
-    "een": "^0.11.0",
-    "harden": "^0.19.0",
-    "kein": "^0.15.0",
-    "protype": "^0.20.0",
-    "truly": "^0.16.0"
+    "een": "^0.12.0",
+    "harden": "^0.21.0",
+    "kein": "^0.16.0",
+    "protype": "^0.21.0",
+    "truly": "^0.17.0"
   }
 }
