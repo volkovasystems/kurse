@@ -1,6 +1,6 @@
 {
   "name": "kurse",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Marks the entity with special trace identification.",
   "main": "kurse.js",
   "support": "kurse.support.js",
@@ -33,9 +33,9 @@
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "cuid": "^1.3.8",
-    "een": "^0.17.0",
+    "een": "^0.18.0",
     "harden": "^0.21.0",
-    "kein": "^0.20.0",
+    "kein": "^0.23.0",
     "protype": "^0.21.0",
     "truly": "^0.18.0"
   },
