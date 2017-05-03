@@ -1,7 +1,9 @@
 "use strict";
 
+const assert = require( "assert" );
 const kurse = require( "./kurse.js" );
 
-console.log( kurse( { "name": "simple" } ) );
-console.log( kurse( function Merchant( ) { } ) );
-console.log( kurse( ) );
+assert.deepEqual( kurse( { "name": "simple" } ), { "name": "simple" } );
+assert.ok( kurse( function Merchant( ) { } ) );
+
+console.log( "ok" );
