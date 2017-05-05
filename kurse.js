@@ -52,20 +52,28 @@
 		{
 			"cuid": "cuid",
 			"een": "een",
-			"kein": "kein",
+			"fname": "fname",
 			"harden": "harden",
+			"kein": "kein",
+			"nmde": "nmde",
 			"protype": "protype",
-			"truly": "truly"
+			"truly": "truly",
+			"wichevr": "wichevr"
 		}
 	@end-include
 */
 
 const cuid = require( "cuid" );
 const een = require( "een" );
-const kein = require( "kein" );
+const fname = require( "fname" );
 const harden = require( "harden" );
+const kein = require( "kein" );
+const nmde = require( "nmde" );
 const protype = require( "protype" );
 const truly = require( "truly" );
+const wichevr = require( "wichevr" );
+
+harden( "ID", Symbol.for( "id" ) );
 
 const kurse = function kurse( entity ){
 	/*;
@@ -79,11 +87,11 @@ const kurse = function kurse( entity ){
 		@end-meta-configuration
 	*/
 
-	if( !protype( entity, OBJECT, FUNCTION ) ){
+	if( !protype( entity, OBJECT + FUNCTION ) ){
 		throw new Error( "invalid entity" );
 	}
 
-	if( kein( kurse.ID, entity ) ){
+	if( kein( ID, entity ) ){
 		return entity;
 	}
 
@@ -91,15 +99,13 @@ const kurse = function kurse( entity ){
 
 	kurse.cache.push( trace );
 
-	if( ( kein( "name", entity ) && truly( entity.name ) ) ||
-		( truly( entity.constructor ) && truly( entity.constructor.name ) ) )
-	{
-		let name = entity.name || entity.constructor.name;
+	let name = wichevr( nmde( entity ), fname( entity.constructor ) );
 
+	if( truly( name ) ){
 		trace = `${ name }-${ trace }`;
 	}
 
-	harden( kurse.ID, Symbol( trace ), entity );
+	harden( ID, Symbol( trace ), entity );
 
 	return entity;
 };
@@ -115,6 +121,6 @@ const kurse = function kurse( entity ){
 */
 harden( "cache", kurse.cache || [ ], kurse );
 
-harden( "ID", Symbol.for( "id" ), kurse );
+harden( "ID", ID, kurse );
 
 module.exports = kurse;

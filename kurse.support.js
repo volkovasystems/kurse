@@ -52,20 +52,28 @@
               		{
               			"cuid": "cuid",
               			"een": "een",
-              			"kein": "kein",
+              			"fname": "fname",
               			"harden": "harden",
+              			"kein": "kein",
+              			"nmde": "nmde",
               			"protype": "protype",
-              			"truly": "truly"
+              			"truly": "truly",
+              			"wichevr": "wichevr"
               		}
               	@end-include
-              */var _for = require("babel-runtime/core-js/symbol/for");var _for2 = _interopRequireDefault(_for);var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+              */var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);var _for = require("babel-runtime/core-js/symbol/for");var _for2 = _interopRequireDefault(_for);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var cuid = require("cuid");
 var een = require("een");
-var kein = require("kein");
+var fname = require("fname");
 var harden = require("harden");
+var kein = require("kein");
+var nmde = require("nmde");
 var protype = require("protype");
 var truly = require("truly");
+var wichevr = require("wichevr");
+
+harden("ID", (0, _for2.default)("id"));
 
 var kurse = function kurse(entity) {
 	/*;
@@ -79,11 +87,11 @@ var kurse = function kurse(entity) {
                                     	@end-meta-configuration
                                     */
 
-	if (!protype(entity, OBJECT, FUNCTION)) {
+	if (!protype(entity, OBJECT + FUNCTION)) {
 		throw new Error("invalid entity");
 	}
 
-	if (kein(kurse.ID, entity)) {
+	if (kein(ID, entity)) {
 		return entity;
 	}
 
@@ -91,15 +99,13 @@ var kurse = function kurse(entity) {
 
 	kurse.cache.push(trace);
 
-	if (kein("name", entity) && truly(entity.name) ||
-	truly(entity.constructor) && truly(entity.constructor.name))
-	{
-		var name = entity.name || entity.constructor.name;
+	var name = wichevr(nmde(entity), fname(entity.constructor));
 
+	if (truly(name)) {
 		trace = name + "-" + trace;
 	}
 
-	harden(kurse.ID, (0, _symbol2.default)(trace), entity);
+	harden(ID, (0, _symbol2.default)(trace), entity);
 
 	return entity;
 };
@@ -115,7 +121,7 @@ var kurse = function kurse(entity) {
    */
 harden("cache", kurse.cache || [], kurse);
 
-harden("ID", (0, _for2.default)("id"), kurse);
+harden("ID", ID, kurse);
 
 module.exports = kurse;
 

@@ -3,7 +3,7 @@
 const assert = require( "assert" );
 const kurse = require( "./kurse.js" );
 
-assert.deepEqual( kurse( { "name": "simple" } ), { "name": "simple" } );
-assert.ok( kurse( function Merchant( ) { } ) );
+assert.ok( kurse( { "name": "simple" } )[ ID ] );
+console.log( kurse( { "name": "simple" } )[ ID ] )
 
 console.log( "ok" );

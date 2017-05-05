@@ -2,10 +2,13 @@ yarn add \
 babel-runtime \
 cuid \
 een \
+fname \
 harden \
 kein \
+nmde \
 protype \
 truly \
+wichevr \
 --save && \
 yarn add \
 babel-cli \
@@ -18,9 +21,12 @@ webpack \
 bower install \
 cuid \
 een \
+fname \
 harden \
 kein \
+nmde \
 protype \
 truly \
+wichevr \
 --save \
 --force-latest
