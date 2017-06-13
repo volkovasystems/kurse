@@ -54,26 +54,30 @@
               			"een": "een",
               			"fname": "fname",
               			"harden": "harden",
-              			"kein": "kein",
+              			"mrkd": "mrkd",
               			"nmde": "nmde",
               			"protype": "protype",
               			"truly": "truly",
               			"wichevr": "wichevr"
               		}
               	@end-include
-              */var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);var _for = require("babel-runtime/core-js/symbol/for");var _for2 = _interopRequireDefault(_for);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+              
+              	@todo:
+              		Add duration clean up.
+              	@end-todo
+              */var _symbol = require("babel-runtime/core-js/symbol");var _symbol2 = _interopRequireDefault(_symbol);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var cuid = require("cuid");
 var een = require("een");
 var fname = require("fname");
 var harden = require("harden");
-var kein = require("kein");
+var mrkd = require("mrkd");
 var nmde = require("nmde");
 var protype = require("protype");
 var truly = require("truly");
 var wichevr = require("wichevr");
 
-harden("ID", (0, _for2.default)("id"));
+var ID = (0, _symbol2.default)("id");
 
 var kurse = function kurse(entity) {
 	/*;
@@ -87,17 +91,18 @@ var kurse = function kurse(entity) {
                                     	@end-meta-configuration
                                     */
 
-	if (!protype(entity, OBJECT + FUNCTION)) {
+	if (!protype(entity, FUNCTION + OBJECT)) {
 		throw new Error("invalid entity");
 	}
 
-	if (kein(ID, entity)) {
+	if (mrkd(ID, entity)) {
 		return entity;
 	}
 
 	do {var trace = cuid();} while (een(kurse.cache, trace));
 
 	kurse.cache.push(trace);
+	kurse.cache[trace] = Date.now();
 
 	var name = wichevr(nmde(entity), fname(entity.constructor));
 
@@ -117,11 +122,11 @@ var kurse = function kurse(entity) {
    
    	@todo:
    		Provide a more persistent way to track trace identities.
+   
+   		Use weak data structures here.
    	@end-todo
    */
 harden("cache", kurse.cache || [], kurse);
-
-harden("ID", ID, kurse);
 
 module.exports = kurse;
 

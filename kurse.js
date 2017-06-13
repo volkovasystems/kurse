@@ -54,26 +54,30 @@
 			"een": "een",
 			"fname": "fname",
 			"harden": "harden",
-			"kein": "kein",
+			"mrkd": "mrkd",
 			"nmde": "nmde",
 			"protype": "protype",
 			"truly": "truly",
 			"wichevr": "wichevr"
 		}
 	@end-include
+
+	@todo:
+		Add duration clean up.
+	@end-todo
 */
 
 const cuid = require( "cuid" );
 const een = require( "een" );
 const fname = require( "fname" );
 const harden = require( "harden" );
-const kein = require( "kein" );
+const mrkd = require( "mrkd" );
 const nmde = require( "nmde" );
 const protype = require( "protype" );
 const truly = require( "truly" );
 const wichevr = require( "wichevr" );
 
-harden( "ID", Symbol.for( "id" ) );
+const ID = Symbol( "id" );
 
 const kurse = function kurse( entity ){
 	/*;
@@ -87,17 +91,18 @@ const kurse = function kurse( entity ){
 		@end-meta-configuration
 	*/
 
-	if( !protype( entity, OBJECT + FUNCTION ) ){
+	if( !protype( entity, FUNCTION + OBJECT ) ){
 		throw new Error( "invalid entity" );
 	}
 
-	if( kein( ID, entity ) ){
+	if( mrkd( ID, entity ) ){
 		return entity;
 	}
 
 	do{ var trace = cuid( ); }while( een( kurse.cache, trace ) );
 
 	kurse.cache.push( trace );
+	kurse.cache[ trace ] = Date.now( );
 
 	let name = wichevr( nmde( entity ), fname( entity.constructor ) );
 
@@ -117,10 +122,10 @@ const kurse = function kurse( entity ){
 
 	@todo:
 		Provide a more persistent way to track trace identities.
+
+		Use weak data structures here.
 	@end-todo
 */
 harden( "cache", kurse.cache || [ ], kurse );
-
-harden( "ID", ID, kurse );
 
 module.exports = kurse;
