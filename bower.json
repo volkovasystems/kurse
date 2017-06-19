@@ -1,13 +1,13 @@
 {
   "name": "kurse",
-  "version": "0.18.0",
+  "version": "0.19.0",
   "description": "Marks the entity with special trace identification.",
   "main": "kurse.deploy.js",
   "support": "kurse.support.js",
   "authors": [
     "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
     "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon"
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
@@ -30,7 +30,7 @@
     "een": "^0.19.0",
     "fname": "^0.9.0",
     "harden": "^0.22.0",
-    "mrkd": "^0.7.0",
+    "mrkd": "^0.8.0",
     "nmde": "^0.1.0",
     "protype": "^0.22.0",
     "truly": "^0.19.0",
