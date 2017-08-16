@@ -1,54 +1,61 @@
 {
-  "name": "kurse",
-  "version": "0.19.0",
-  "description": "Marks the entity with special trace identification.",
-  "main": "kurse.js",
-  "support": "kurse.support.js",
-  "deploy": "kurse.deploy.js",
-  "browser": "kurse.deploy.js",
-  "scripts": {
-    "build": "babel kurse.js --out-file kurse.support.js --source-maps && webpack --progress --display-modules",
-    "test": "mocha kurse-test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/volkovasystems/kurse.git"
-  },
-  "keywords": [
-    "mark",
-    "entity",
-    "trace",
-    "identity",
-    "kurse"
-  ],
-  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-  "contributors": [
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon <vinsevinalon@gmail.com>"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/volkovasystems/kurse/issues"
-  },
-  "homepage": "https://github.com/volkovasystems/kurse#readme",
-  "dependencies": {
-    "babel-runtime": "^6.23.0",
-    "cuid": "^1.3.8",
-    "een": "^0.19.0",
-    "fname": "^0.9.0",
-    "harden": "^0.22.0",
-    "mrkd": "^0.8.0",
-    "nmde": "^0.1.0",
-    "protype": "^0.22.0",
-    "truly": "^0.19.0",
-    "wichevr": "^0.10.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.1",
-    "source-map-loader": "^0.2.1",
-    "webpack": "^2.6.1"
-  }
+	"name": "kurse",
+	"version": "0.19.0",
+	"description": "Marks the entity with special trace identification.",
+	"main": "kurse.js",
+	"support": "kurse.support.js",
+	"deploy": "kurse.deploy.js",
+	"browser": "kurse.deploy.js",
+	"scripts": {
+		"pristine": "rsetmod clean && flxc execute ./.install.sh",
+		"clear": "rsetmod clean --clear",
+		"formal": "jesy apply '*.json'",
+		"build:support": "gulp --module kurse --all",
+		"build:deploy": "webpack --config webpack.compact.js --progress --display-modules",
+		"rebuild": "npm run build:support && npm run build:deploy",
+		"build": "npm run pristine && npm run rebuild",
+		"build:test:support": "gulp --module test --all",
+		"build:test:deploy": "webpack --config webpack.test.js --progress --display-modules",
+		"build:test:bridge": "gulp --module test --bridge",
+		"build:test": "npm run build:test:support && npm run build:test:deploy && npm run build:test:bridge",
+		"test:server": "mocha test.js && mocha test.js --reporter=json > test.server.json",
+		"test:client": "./node_modules/.bin/wdio wdio.client.js",
+		"pretest": "npm run clear && npm run rebuild && npm run build:test",
+		"test": "npm run test:server && npm run test:client",
+		"posttest": "npm run formal",
+		"deploy": "npm run build && npm run build:test && npm run test:server && npm run test:client && npm run formal"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/volkovasystems/kurse.git"
+	},
+	"keywords": [
+		"mark",
+		"entity",
+		"trace",
+		"identity",
+		"kurse"
+	],
+	"author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+	"contributors": [
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/volkovasystems/kurse/issues"
+	},
+	"homepage": "https://github.com/volkovasystems/kurse#readme",
+	"dependencies": {
+		"babel-runtime": "^6.25.0",
+		"cuid": "^1.3.8",
+		"een": "^0.23.0",
+		"fname": "^0.13.0",
+		"harden": "^0.23.0",
+		"mrkd": "^0.11.0",
+		"nmde": "^0.5.0",
+		"protype": "^0.24.0",
+		"truly": "^0.20.0",
+		"wichevr": "^0.14.0"
+	}
 }
