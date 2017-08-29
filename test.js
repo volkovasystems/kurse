@@ -55,6 +55,7 @@ const assert = require( "should" );
 
 //: @server:
 const kurse = require( "./kurse.js" );
+const mrkd = require( "mrkd" );
 //: @end-server
 
 
@@ -65,6 +66,14 @@ const kurse = require( "./kurse.js" );
 //: @server:
 
 describe( "kurse", ( ) => {
+
+	describe( "`kurse( { 'name': 'simple' } )`", ( ) => {
+		it( "should contain Symbol( 'id' )", ( ) => {
+
+			assert.equal( mrkd( Symbol( "id" ), kurse( { "name": "simple" } ) ), true );
+
+		} );
+	} );
 
 } );
 

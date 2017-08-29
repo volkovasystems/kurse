@@ -1,16 +1,32 @@
 {
-  "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
-    "pending": 0,
-    "failures": 0,
-    "start": "2017-08-16T09:56:27.722Z",
-    "end": "2017-08-16T09:56:27.722Z",
-    "duration": 0
-  },
-  "tests": [],
-  "pending": [],
-  "failures": [],
-  "passes": []
+	"stats": {
+		"suites": 2,
+		"tests": 1,
+		"passes": 1,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-08-29T07:47:50.938Z",
+		"end": "2017-08-29T07:47:50.947Z",
+		"duration": 9
+	},
+	"tests": [
+		{
+			"title": "should contain Symbol( 'id' )",
+			"fullTitle": "kurse `kurse( { 'name': 'simple' } )` should contain Symbol( 'id' )",
+			"duration": 5,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should contain Symbol( 'id' )",
+			"fullTitle": "kurse `kurse( { 'name': 'simple' } )` should contain Symbol( 'id' )",
+			"duration": 5,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
 }

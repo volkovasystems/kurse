@@ -55,6 +55,7 @@ const assert = require( "should" );
 
 //: @server:
 const kurse = require( "./kurse.js" );
+const mrkd = require( "mrkd" );
 //: @end-server
 
 //: @client:
@@ -70,6 +71,14 @@ const path = require( "path" );
 
 describe( "kurse", ( ) => {
 
+	describe( "`kurse( { 'name': 'simple' } )`", ( ) => {
+		it( "should contain Symbol( 'id' )", ( ) => {
+
+			assert.equal( mrkd( Symbol( "id" ), kurse( { "name": "simple" } ) ), true );
+
+		} );
+	} );
+
 } );
 
 //: @end-server
@@ -78,6 +87,15 @@ describe( "kurse", ( ) => {
 //: @client:
 
 describe( "kurse", ( ) => {
+
+	describe( "`kurse( { 'name': 'simple' } )`", ( ) => {
+		it( "should contain Symbol( 'id' )", ( ) => {
+
+			assert.equal( mrkd( Symbol( "id" ), kurse( { "name": "simple" } ) ), true );
+
+		} );
+	} );
+
 } );
 
 //: @end-client
@@ -86,6 +104,25 @@ describe( "kurse", ( ) => {
 //: @bridge:
 
 describe( "kurse", ( ) => {
+
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
+
+	describe( "`kurse( { 'name': 'simple' } )`", ( ) => {
+		it( "should contain Symbol( 'id' )", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return mrkd( Symbol( "id" ), kurse( { "name": "simple" } ) );
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, true );
+
+		} );
+	} );
+
 } );
 
 //: @end-bridge

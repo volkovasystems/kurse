@@ -1,0 +1,84 @@
+{
+	"state": {
+		"passed": 1,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-08-29T07:47:52.339Z",
+	"end": "2017-08-29T07:48:34.594Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": null
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd"
+	},
+	"suites": [
+		{
+			"name": "kurse",
+			"duration": 0,
+			"start": "2017-08-29T07:48:32.741Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "kurse",
+			"duration": 1676,
+			"start": "2017-08-29T07:48:32.741Z",
+			"end": "2017-08-29T07:48:34.417Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-08-29T07:48:32.743Z",
+					"end": "2017-08-29T07:48:32.743Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "kurse",
+					"associatedTest": "should contain Symbol( 'id' )"
+				},
+				{
+					"start": "2017-08-29T07:48:34.415Z",
+					"end": "2017-08-29T07:48:34.416Z",
+					"duration": 1,
+					"title": "\"after each\" hook",
+					"associatedSuite": "kurse",
+					"associatedTest": "should contain Symbol( 'id' )"
+				},
+				{
+					"start": "2017-08-29T07:48:34.417Z",
+					"end": "2017-08-29T07:48:34.417Z",
+					"duration": 0,
+					"title": "\"after all\" hook",
+					"associatedSuite": "kurse"
+				}
+			]
+		},
+		{
+			"name": "`kurse( { 'name': 'simple' } )`",
+			"duration": 1674,
+			"start": "2017-08-29T07:48:32.742Z",
+			"end": "2017-08-29T07:48:34.416Z",
+			"tests": [
+				{
+					"name": "should contain Symbol( 'id' )",
+					"start": "2017-08-29T07:48:32.742Z",
+					"end": "2017-08-29T07:48:34.414Z",
+					"duration": 1672,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}
